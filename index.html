@@ -1,0 +1,1419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apex Fitness Club | Best Gym in Downtown, Metropolis</title>
+    <meta name="description" content="Apex Fitness Club — Metropolis's premier fitness destination at Sector 17D. State-of-the-art equipment, expert trainers, open 6 AM daily. Join today!">
+    <meta name="keywords" content="gym chandigarh, fitness club sector 17, best gym chandigarh, octane wellness, personal trainer chandigarh">
+    <meta property="og:title" content="Apex Fitness Club | Downtown, Metropolis">
+    <meta property="og:description" content="Metropolis's most advanced wellness club. 200+ machines, expert trainers, open 6 AM daily.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1200&q=80">
+    <link rel="canonical" href="https://apexfitness.com">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap');
+
+        :root {
+            --color-bg: #0A0A0A;
+            --color-surface: #111111;
+            --color-surface-2: #1A1A1A;
+            --color-accent: #C8FF00;
+            --color-accent-dark: #9ECC00;
+            --color-text: #FFFFFF;
+            --color-text-muted: #888888;
+            --color-border: #2A2A2A;
+
+            --font-display: 'Bebas Neue', sans-serif;
+            --font-body: 'Inter', sans-serif;
+
+            --text-hero: clamp(52px, 8vw, 100px);
+            --text-h2: clamp(32px, 5vw, 56px);
+            --text-h3: 20px;
+            --text-body: 16px;
+            --text-label: 12px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            font-family: var(--font-body);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-display);
+            font-weight: 400;
+            line-height: 1;
+            margin-bottom: 0.5em;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 100px 48px;
+        }
+
+        @media (max-width: 639px) {
+            .container {
+                padding: 60px 20px;
+            }
+        }
+
+        .eyebrow {
+            font-family: var(--font-body);
+            font-size: var(--text-label);
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--color-accent);
+            margin-bottom: 16px;
+            display: inline-block;
+        }
+
+        .h2-title {
+            font-size: var(--text-h2);
+            margin-bottom: 48px;
+        }
+
+        .btn-cta {
+            background: var(--color-accent);
+            color: #000;
+            border-radius: 999px;
+            padding: 10px 24px;
+            font-weight: 600;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s, transform 0.2s;
+            border: 2px solid var(--color-accent);
+        }
+
+        .btn-cta:hover {
+            background: var(--color-accent-dark);
+            border-color: var(--color-accent-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-ghost {
+            background: transparent;
+            color: var(--color-text);
+            border-radius: 999px;
+            padding: 10px 24px;
+            font-weight: 600;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid var(--color-text);
+            transition: background 0.3s, color 0.3s, transform 0.2s, border-color 0.3s;
+        }
+
+        .btn-ghost:hover {
+            background: var(--color-text);
+            color: #000;
+            transform: translateY(-2px);
+        }
+
+        /* NAVBAR */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(10,10,10,0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--color-border);
+            z-index: 1000;
+            transition: background 0.3s;
+            padding: 16px 48px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar.scrolled {
+            background: rgba(10,10,10,0.98);
+        }
+
+        .nav-logo {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .nav-logo .octane {
+            font-family: var(--font-display);
+            font-size: 28px;
+            color: var(--color-accent);
+            line-height: 1;
+        }
+
+        .nav-logo .wellness {
+            font-size: 11px;
+            color: var(--color-text-muted);
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-size: 14px;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -4px;
+            width: 100%;
+            height: 2px;
+            background: var(--color-accent);
+            transform: scaleX(0);
+            transition: transform 0.3s;
+            transform-origin: right;
+        }
+
+        .nav-links a:hover::after, .nav-links a.active::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .hamburger span {
+            width: 24px;
+            height: 2px;
+            background: white;
+            transition: 0.3s;
+        }
+
+        @media (max-width: 1023px) {
+            .navbar {
+                padding: 16px 20px;
+            }
+            .nav-links {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background: rgba(10,10,10,0.98);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 40px;
+                transform: translateY(-100%);
+                transition: transform 0.4s ease-in-out;
+                z-index: 1000;
+            }
+            .nav-links.nav-open {
+                transform: translateY(0);
+            }
+            .nav-links a {
+                font-size: 24px;
+            }
+            .nav-cta {
+                display: none;
+            }
+            .nav-links .nav-cta-mobile {
+                display: block;
+            }
+            .hamburger {
+                display: flex;
+            }
+            .nav-open-hamburger span:nth-child(1) { transform: rotate(45deg) translate(6px, 6px); }
+            .nav-open-hamburger span:nth-child(2) { opacity: 0; }
+            .nav-open-hamburger span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+        }
+
+        /* HERO */
+        .hero {
+            height: 100vh;
+            background-image: url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(0,0,0,0.85) 50%, rgba(0,0,0,0.3) 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            padding: 0 48px;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .hero-h1 {
+            font-size: var(--text-hero);
+            color: white;
+            white-space: pre-line;
+            line-height: 1.1;
+            margin-bottom: 24px;
+        }
+
+        .hero-body {
+            font-size: var(--text-body);
+            color: #ddd;
+            max-width: 500px;
+            margin-bottom: 40px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+        }
+
+        .hero-badge {
+            position: absolute;
+            bottom: 48px;
+            left: 48px;
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(8px);
+            border-radius: 8px;
+            padding: 12px 20px;
+            z-index: 1;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        @media (max-width: 639px) {
+            .hero-content { padding: 0 20px; }
+            .hero-badge { bottom: 24px; left: 20px; }
+            .hero-buttons { flex-direction: column; }
+        }
+
+        /* ABOUT STRIP */
+        .about-strip {
+            background: var(--color-surface);
+            border-top: 1px solid var(--color-border);
+            border-bottom: 1px solid var(--color-border);
+        }
+        
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .about-desc {
+            font-size: 18px;
+            color: var(--color-text-muted);
+        }
+
+        @media (max-width: 639px) {
+            .about-grid { grid-template-columns: 1fr; gap: 16px; }
+        }
+
+        /* PHOTO GALLERY */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+        }
+
+        .gallery-card {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .gallery-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-label {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(200,255,0,0.9);
+            color: #000;
+            font-weight: 600;
+            padding: 12px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+            text-align: center;
+        }
+
+        .gallery-card:hover .gallery-label {
+            transform: translateY(0);
+        }
+
+        @media (max-width: 1023px) {
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 639px) {
+            .gallery-grid { grid-template-columns: 1fr; }
+        }
+
+        /* SERVICES */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .service-card {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            padding: 32px 24px;
+            transition: border-color 0.2s;
+        }
+
+        .service-card:hover {
+            border-color: var(--color-accent);
+        }
+
+        .service-icon {
+            color: var(--color-accent);
+            width: 32px;
+            height: 32px;
+            margin-bottom: 24px;
+        }
+
+        .service-title {
+            font-size: var(--text-h3);
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .service-desc {
+            color: var(--color-text-muted);
+            font-size: 14px;
+        }
+
+        @media (max-width: 1023px) {
+            .services-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 639px) {
+            .services-grid { grid-template-columns: 1fr; }
+        }
+
+        /* VIDEO REELS */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .video-card {
+            position: relative;
+            aspect-ratio: 9/16;
+            border-radius: 8px;
+            overflow: hidden;
+            background: var(--color-surface);
+            cursor: pointer;
+        }
+
+        .video-thumb {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.4);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: background 0.3s;
+        }
+
+        .video-card:hover .video-overlay {
+            background: rgba(0,0,0,0.6);
+        }
+
+        .play-btn {
+            width: 64px;
+            height: 64px;
+            background: var(--color-accent);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 16px;
+            transition: transform 0.2s;
+        }
+
+        .video-card:hover .play-btn {
+            transform: scale(1.1);
+        }
+
+        .play-btn svg {
+            width: 24px;
+            height: 24px;
+            fill: #000;
+            margin-left: 4px;
+        }
+
+        .video-tag {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            background: var(--color-accent);
+            color: #000;
+            font-size: 11px;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .video-title {
+            position: absolute;
+            bottom: 24px;
+            left: 16px;
+            right: 16px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .video-iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: none;
+        }
+
+        .video-card.playing .video-thumb,
+        .video-card.playing .video-overlay,
+        .video-card.playing .video-tag,
+        .video-card.playing .video-title {
+            display: none;
+        }
+
+        .video-card.playing .video-iframe {
+            display: block;
+        }
+
+        @media (max-width: 1023px) {
+            .video-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 639px) {
+            .video-grid { grid-template-columns: 1fr; }
+        }
+
+        /* STATS BAR */
+        .stats-bar {
+            background: var(--color-surface);
+            padding: 60px 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 48px;
+            text-align: center;
+        }
+
+        .stat-item {
+            border-right: 1px solid var(--color-border);
+            padding: 0 20px;
+        }
+
+        .stat-item:last-child {
+            border-right: none;
+        }
+
+        .stat-num {
+            font-family: var(--font-display);
+            font-size: 64px;
+            color: var(--color-accent);
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: var(--color-text-muted);
+        }
+
+        @media (max-width: 1023px) {
+            .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 40px 0; }
+            .stat-item:nth-child(2) { border-right: none; }
+        }
+        @media (max-width: 639px) {
+            .stats-grid { padding: 0 20px; }
+        }
+
+        /* TESTIMONIALS */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .review-card {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            padding: 28px;
+        }
+
+        .review-stars {
+            color: var(--color-accent);
+            margin-bottom: 16px;
+            font-size: 20px;
+        }
+
+        .review-text {
+            color: var(--color-text-muted);
+            font-size: 15px;
+            margin-bottom: 24px;
+            font-style: italic;
+        }
+
+        .review-author {
+            font-weight: 600;
+        }
+
+        @media (max-width: 1023px) {
+            .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 639px) {
+            .testimonials-grid { grid-template-columns: 1fr; }
+        }
+
+        /* LOCATION */
+        .location-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+
+        .contact-item {
+            margin-bottom: 32px;
+        }
+
+        .contact-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--color-accent);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .contact-detail {
+            color: var(--color-text-muted);
+            white-space: pre-line;
+        }
+
+        .map-container {
+            width: 100%;
+            height: 420px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        @media (max-width: 1023px) {
+            .location-grid { grid-template-columns: 1fr; }
+        }
+
+        /* FAQ */
+        .faq-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 48px;
+            align-items: start;
+        }
+
+        .faq-title {
+            font-size: clamp(40px, 5vw, 64px);
+            white-space: pre-line;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .faq-item.open {
+            border-bottom: 1px solid var(--color-accent);
+        }
+
+        .faq-question {
+            padding: 24px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .faq-question:hover {
+            color: var(--color-accent);
+        }
+
+        .faq-icon {
+            font-size: 24px;
+            font-weight: 300;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            color: var(--color-text-muted);
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 500px;
+            padding-bottom: 24px;
+        }
+
+        @media (max-width: 1023px) {
+            .faq-grid { grid-template-columns: 1fr; }
+        }
+
+        /* CTA BANNER */
+        .cta-banner {
+            position: relative;
+            padding: 100px 48px;
+            text-align: center;
+            background-image: url('https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .cta-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.85);
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-form {
+            max-width: 480px;
+            margin: 0 auto 40px;
+            background: rgba(17, 17, 17, 0.8);
+            padding: 40px;
+            border-radius: 16px;
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-input {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--color-text);
+            padding: 16px 20px;
+            border-radius: 8px;
+            font-family: var(--font-body);
+            font-size: 16px;
+            transition: border-color 0.3s, background 0.3s;
+        }
+        
+        .form-input::placeholder {
+            color: var(--color-text-muted);
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--color-accent);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .cta-form .btn-cta {
+            width: 100%;
+            margin-top: 8px;
+            padding: 16px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .cta-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.75);
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 1;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .cta-title {
+            font-size: var(--text-h2);
+            white-space: pre-line;
+            margin-bottom: 24px;
+        }
+
+        .cta-desc {
+            color: #ddd;
+            margin-bottom: 40px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+        }
+
+        @media (max-width: 639px) {
+            .cta-banner { padding: 60px 20px; }
+            .cta-buttons { flex-direction: column; }
+        }
+
+        /* FOOTER */
+        .footer {
+            background: var(--color-surface);
+            padding: 60px 48px 24px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto 60px;
+        }
+
+        .footer-col h4 {
+            font-family: var(--font-body);
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            color: white;
+            letter-spacing: 1px;
+        }
+
+        .footer-col p, .footer-col a {
+            color: var(--color-text-muted);
+            font-size: 14px;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .footer-col a:hover {
+            color: var(--color-accent);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 16px;
+            margin-top: 24px;
+        }
+
+        .social-icons a {
+            color: white;
+            display: inline-flex;
+        }
+
+        .social-icons a:hover {
+            color: var(--color-accent);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            border-top: 1px solid var(--color-border);
+            padding-top: 24px;
+            text-align: center;
+            font-size: 14px;
+            color: var(--color-text-muted);
+        }
+
+        @media (max-width: 1023px) {
+            .footer-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 639px) {
+            .footer { padding: 60px 20px 24px; }
+            .footer-grid { grid-template-columns: 1fr; }
+        }
+
+        /* WHATSAPP FAB */
+        .whatsapp-fab {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            z-index: 9999;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .whatsapp-fab:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 28px rgba(37,211,102,0.6);
+        }
+
+        /* SCROLL REVEAL */
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- [1] NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <a href="#" class="nav-logo">
+            <span class="octane">APEX</span>
+            <span class="wellness">WELLNESS CLUB</span>
+        </a>
+        
+        <div class="nav-links" id="nav-links">
+            <a href="#about">About</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#services">Services</a>
+            <a href="#videos">Videos</a>
+            <a href="#location">Location</a>
+            <a href="#faq">FAQ</a>
+            <a href="https://wa.me/15550198900" class="btn-cta nav-cta-mobile" style="display: none; margin-top: 20px;">Join Now ↗</a>
+        </div>
+
+        <a href="https://wa.me/15550198900" class="btn-cta nav-cta">Join Now ↗</a>
+
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- [2] HERO SECTION -->
+    <section class="hero" id="home">
+        <div class="hero-overlay"></div>
+        <div class="hero-content reveal">
+            <div class="eyebrow">DOWNTOWN · METROPOLIS</div>
+            <h1 class="hero-h1">YOUR GYM.<br>YOUR SPACE.<br>YOUR GOALS.</h1>
+            <p class="hero-body">Metropolis's most advanced wellness club.<br>State-of-the-art equipment, expert trainers,<br>and a community that drives results.</p>
+            <div class="hero-buttons">
+                <a href="https://wa.me/15550198900" class="btn-cta">Join Now ↗</a>
+                <a href="#gallery" class="btn-ghost">View Gallery</a>
+            </div>
+        </div>
+        <div class="hero-badge reveal">
+            ⭐ 4.6 Rating · 734+ Members Love Us
+        </div>
+    </section>
+
+    <!-- [3] ABOUT STRIP -->
+    <section class="about-strip" id="about">
+        <div class="container reveal">
+            <div class="about-grid">
+                <div class="eyebrow">OUR STUDIO</div>
+                <div class="about-desc">
+                    Discover what makes Apex Fitness Club special. Experience state-of-the-art facilities designed for every fitness level — from heavy strength zones to cardio suites and personal training areas.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- [4] PHOTO GALLERY -->
+    <section class="container" id="gallery">
+        <div class="reveal">
+            <div class="eyebrow">OUR SPACE</div>
+            <h2 class="h2-title">TRAIN IN A WORLD-CLASS FACILITY</h2>
+        </div>
+        
+        <div class="gallery-grid" id="gallery-grid">
+            <!-- Populated by JS -->
+        </div>
+    </section>
+
+    <!-- [5] SERVICES / FEATURES -->
+    <section class="container" id="services">
+        <div class="reveal">
+            <div class="eyebrow">WHY APEX</div>
+            <h2 class="h2-title">WE'RE MORE THAN JUST A GYM —<br>WE'RE YOUR PARTNER IN ACHIEVING GREATNESS</h2>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card reveal">
+                <svg class="service-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 10.5l-3-3V5a1 1 0 0 0-1-1h-2.5l-3-3a1 1 0 0 0-1.4 0l-3 3H4a1 1 0 0 0-1 1v2.5l-3 3a1 1 0 0 0 0 1.4l3 3V19a1 1 0 0 0 1 1h2.5l3 3a1 1 0 0 0 1.4 0l3-3h2.5a1 1 0 0 0 1-1v-2.5l3-3a1 1 0 0 0 0-1.4zM16 17h-1.5a1 1 0 0 0-1 1v1.5l-1.5 1.5L10.5 19.5v-1.5a1 1 0 0 0-1-1H8v-1.5a1 1 0 0 0-1-1v-1.5L5.5 11.5L7 10v-1.5a1 1 0 0 0 1-1H9.5V6L11.5 4.5 13 6v1.5a1 1 0 0 0 1 1h1.5v1.5a1 1 0 0 0 1 1v1.5l1.5 1.5-1.5 1.5V17z"/><circle cx="11.5" cy="11.5" r="3.5"/></svg>
+                <div class="service-title">Expert Trainers</div>
+                <div class="service-desc">Certified coaches with 5+ years experience guiding every rep</div>
+            </div>
+            <div class="service-card reveal">
+                <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                <div class="service-title">Modern Equipment</div>
+                <div class="service-desc">200+ machines from premium brands — always maintained</div>
+            </div>
+            <div class="service-card reveal">
+                <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/><path d="M12 6v6l4 2"/></svg>
+                <div class="service-title">Holistic Wellness</div>
+                <div class="service-desc">From strength training to yoga, complete health coverage</div>
+            </div>
+            <div class="service-card reveal">
+                <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+                <div class="service-title">Progress Tracking</div>
+                <div class="service-desc">Monthly assessments and customised plans for real results</div>
+            </div>
+            <div class="service-card reveal">
+                <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+                <div class="service-title">Premium Amenities</div>
+                <div class="service-desc">Clean changing rooms, showers, and locker facilities</div>
+            </div>
+            <div class="service-card reveal">
+                <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                <div class="service-title">Flexible Hours</div>
+                <div class="service-desc">Open 6 AM–10:30 PM Mon–Sat · 5 AM–9 PM on Sundays</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- [6] VIDEO REEL SECTION -->
+    <section class="container" id="videos">
+        <div class="reveal">
+            <div class="eyebrow">FEEL THE ENERGY</div>
+            <h2 class="h2-title">WATCH OUR REELS<br><span style="font-size: 20px; font-family: var(--font-body); color: var(--color-text-muted);">Follow us on Instagram for daily fitness content</span></h2>
+        </div>
+
+        <div class="video-grid" id="video-grid">
+            <!-- Populated by JS -->
+        </div>
+
+        <div style="text-align: center;" class="reveal">
+            <a href="https://www.instagram.com/apexfitnessclub" target="_blank" class="btn-ghost">View All Reels on Instagram ↗</a>
+        </div>
+    </section>
+
+    <!-- [7] STATS BAR -->
+    <section class="stats-bar" id="stats">
+        <div class="stats-grid">
+            <div class="stat-item reveal">
+                <div class="stat-num">734+</div>
+                <div class="stat-label">Members</div>
+            </div>
+            <div class="stat-item reveal">
+                <div class="stat-num">200+</div>
+                <div class="stat-label">Machines</div>
+            </div>
+            <div class="stat-item reveal">
+                <div class="stat-num">5+</div>
+                <div class="stat-label">Trainers</div>
+            </div>
+            <div class="stat-item reveal">
+                <div class="stat-num">6 AM</div>
+                <div class="stat-label">Opens Daily</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- [8] TESTIMONIALS -->
+    <section class="container" id="testimonials">
+        <div class="reveal">
+            <h2 class="h2-title">WHAT OUR MEMBERS SAY</h2>
+        </div>
+        <div class="testimonials-grid" id="testimonials-grid">
+            <!-- Populated by JS -->
+        </div>
+    </section>
+
+    <!-- [9] LOCATION + MAP -->
+    <section class="container" id="location">
+        <div class="location-grid">
+            <div class="reveal">
+                <div class="eyebrow">FIND US</div>
+
+                <div class="contact-item" style="margin-bottom: 24px; padding: 16px; background: rgba(255, 255, 255, 0.05); border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.1);">
+                    <div style="font-size: 20px; font-weight: 600; margin-bottom: 4px;">
+                        <span style="color: var(--color-accent);">★ 4.6</span> / 5.0
+                    </div>
+                    <div style="color: var(--color-text-muted); font-size: 14px;">
+                        Based on 734+ Google Reviews
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-label">📍 Address</div>
+                    <div class="contact-detail">SCO 73-79, Shopping Plaza,<br>123 Fitness Ave, Downtown Metropolis – 10001</div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-label">🕐 Opening Hours</div>
+                    <div class="contact-detail">Mon – Sat : 6:00 AM – 10:30 PM<br>Sunday    : 5:00 AM – 9:00 PM</div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-label">📞 Phone</div>
+                    <div class="contact-detail">+1 555 019 8900</div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-label">💬 WhatsApp</div>
+                    <div class="contact-detail"><a href="https://wa.me/15550198900" target="_blank">https://wa.me/15550198900</a></div>
+                </div>
+
+                <a href="https://www.google.com/maps/place/Apex+Wellness+Club/@40.7128,-74.0060,17z/data=!3m1!4b1!4m6!3m5!1s0x390fed47cd0b326b:0x505cbe81872e1df0!8m2!3d30.7410961!4d76.7820211!16s%2Fg%2F11qyv2fh7d?entry=ttu" target="_blank" class="btn-ghost" style="margin-top: 16px;">Get Directions ↗</a>
+            </div>
+            
+            <div class="map-container reveal">
+                <iframe
+                  src="https://maps.google.com/maps?q=40.7128,-74.0060&z=17&output=embed"
+                  width="100%"
+                  height="100%"
+                  style="border:0; filter: grayscale(100%) invert(92%) contrast(83%); border-radius: 8px;"
+                  allowfullscreen=""
+                  loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- [10] FAQ -->
+    <section class="container" id="faq">
+        <div class="faq-grid">
+            <div class="reveal">
+                <div class="eyebrow">FAQ</div>
+                <h2 class="faq-title">ALL YOUR<br>QUERIES<br>ANSWERED.</h2>
+            </div>
+            <div class="faq-list reveal" id="faq-list">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- [11] CTA BANNER -->
+    <section class="cta-banner">
+        <div class="cta-overlay"></div>
+        <div class="cta-content reveal">
+            <h2 class="cta-title">READY TO START YOUR<br>FITNESS JOURNEY?</h2>
+            <p class="cta-desc">Join a community that motivates you, trains with the<br>best tech, and supports every goal — big or small.</p>
+            
+            <form class="cta-form" onsubmit="event.preventDefault(); alert('Thank you! We will contact you shortly.');">
+                <div class="form-group">
+                    <input type="text" class="form-input" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" class="form-input" placeholder="Phone Number" required>
+                </div>
+                <button type="submit" class="btn-cta">Request Call Back</button>
+            </form>
+
+            <div class="cta-buttons">
+                <a href="https://wa.me/15550198900" class="btn-ghost">Or Join on WhatsApp ↗</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- [12] FOOTER -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4 style="font-family: var(--font-display); font-size: 24px; color: var(--color-accent); font-weight: normal;">APEX WELLNESS CLUB</h4>
+                <p>Downtown, Metropolis</p>
+                <p>+1 555 019 8900</p>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/apexfitnessclub" target="_blank">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    </a>
+                    <a href="https://wa.me/15550198900" target="_blank">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+    </a>
+
+    <a href="https://wa.me/15550198900" class="whatsapp-fab" target="_blank">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+        </svg>
+    </a>
+    <script>
+        // Data
+        const gymPhotos = [
+          { url: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80", label: "Main Gym Floor" },
+          { url: "https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=800&q=80", label: "Strength Zone" },
+          { url: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80", label: "Cardio Suite" },
+          { url: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&q=80", label: "Free Weights" },
+          { url: "https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=800&q=80", label: "Olympic Platform" },
+          { url: "https://images.unsplash.com/photo-1576678927484-cc907957088c?w=800&q=80", label: "Functional Training" },
+          { url: "https://images.unsplash.com/photo-1549060279-7e168fcee0c2?w=800&q=80", label: "Personal Training" },
+          { url: "https://images.unsplash.com/photo-1623874514711-0f321325f318?w=800&q=80", label: "Locker Room" },
+          { url: "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=800&q=80", label: "Yoga & Stretch" },
+          { url: "https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=800&q=80", label: "Boxing Zone" },
+          { url: "https://images.unsplash.com/photo-1593079831268-3381b0db4a77?w=800&q=80", label: "Cycling Studio" },
+          { url: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80", label: "Reception" }
+        ];
+
+        const videoReels = [
+          {
+            embedUrl: "https://www.youtube.com/embed/UItWltVZZmE",
+            thumb: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&q=80",
+            title: "Morning Strength Session",
+            tag: "STRENGTH"
+          },
+          {
+            embedUrl: "https://www.youtube.com/embed/cbKkB3POqaY",
+            thumb: "https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=600&q=80",
+            title: "Full Body HIIT Workout",
+            tag: "HIIT"
+          },
+          {
+            embedUrl: "https://www.youtube.com/embed/oAPCPjnU1wA",
+            thumb: "https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=600&q=80",
+            title: "Club Tour & Facilities",
+            tag: "TOUR"
+          }
+        ];
+
+        const reviews = [
+          {
+            name: "Verified Member",
+            stars: 5,
+            text: "Really nice gym, very spacious with good equipment. Extremely hygienic and the staff is highly professional. Trainer Alex made me lose 4 kgs in just a week — a great motivator!"
+          },
+          {
+            name: "Verified Member",
+            stars: 5,
+            text: "I recently joined Apex and my experience has been very good. The gym is well maintained and clean. Equipment is modern — everything required for strength training and cardio is available."
+          },
+          {
+            name: "Long-Term Member",
+            stars: 5,
+            text: "With Apex for 2 years. Experienced and well-trained staff, contributing to the best gym environment. Training with Trainer Alex for 6 months has helped me achieve my 2025 goals. Totally recommend!"
+          }
+        ];
+
+        const faqs = [
+          { q: "What are your membership plans?", a: "We offer monthly, quarterly, and annual plans. Contact us on WhatsApp at +1 555 019 8900 for current pricing and offers." },
+          { q: "Is personal training available?", a: "Yes! We have certified personal trainers for one-on-one sessions. Trainer Alex has helped hundreds of members achieve their fitness goals." },
+          { q: "Can I try before joining?", a: "Yes, we offer a free trial session. Walk in to our Sector 17D facility or WhatsApp us to schedule your visit." },
+          { q: "What facilities are included?", a: "State-of-the-art gym floor, 200+ machines, cardio suite, strength zone, functional training area, changing rooms, showers, and lockers." },
+          { q: "Do you offer group classes?", a: "Yes, we run group fitness classes including HIIT, yoga, and functional training. Schedule is updated monthly." },
+          { q: "Is there parking available?", a: "Yes, ample parking is available at the SCO Shopping Plaza, Downtown, Metropolis." }
+        ];
+
+        // Populate Gallery
+        const galleryGrid = document.getElementById('gallery-grid');
+        gymPhotos.forEach(photo => {
+            galleryGrid.innerHTML += `
+                <div class="gallery-card reveal">
+                    <img src="${photo.url}" alt="${photo.label}" loading="lazy">
+                    <div class="gallery-label">${photo.label}</div>
+                </div>
+            `;
+        });
+
+        // Populate Videos
+        const videoGrid = document.getElementById('video-grid');
+        videoReels.forEach(video => {
+            videoGrid.innerHTML += `
+                <div class="video-card reveal" onclick="playVideo(this, '${video.embedUrl}')">
+                    <img src="${video.thumb}" alt="${video.title}" class="video-thumb" loading="lazy">
+                    <div class="video-overlay">
+                        <div class="play-btn"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg></div>
+                    </div>
+                    <div class="video-tag">${video.tag}</div>
+                    <div class="video-title">${video.title}</div>
+                </div>
+            `;
+        });
+
+        function playVideo(card, url) {
+            card.classList.add('playing');
+            card.innerHTML += `<iframe class="video-iframe" src="${url}?autoplay=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
+        }
+
+        // Populate Testimonials
+        const testimonialsGrid = document.getElementById('testimonials-grid');
+        reviews.forEach(review => {
+            const starsHtml = '★'.repeat(review.stars);
+            testimonialsGrid.innerHTML += `
+                <div class="review-card reveal">
+                    <div class="review-stars">${starsHtml}</div>
+                    <div class="review-text">"${review.text}"</div>
+                    <div class="review-author">${review.name}</div>
+                </div>
+            `;
+        });
+
+        // Populate FAQ
+        const faqList = document.getElementById('faq-list');
+        faqs.forEach((faq, index) => {
+            faqList.innerHTML += `
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        ${faq.q}
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        ${faq.a}
+                    </div>
+                </div>
+            `;
+        });
+
+        function toggleFaq(element) {
+            const item = element.parentElement;
+            const icon = element.querySelector('.faq-icon');
+            const isOpen = item.classList.contains('open');
+            
+            // Close all
+            document.querySelectorAll('.faq-item').forEach(faq => {
+                faq.classList.remove('open');
+                faq.querySelector('.faq-icon').textContent = '+';
+            });
+
+            // Open clicked if it wasn't open
+            if (!isOpen) {
+                item.classList.add('open');
+                icon.textContent = '−';
+            }
+        }
+
+        // Navbar Scroll & Active State
+        const navbar = document.getElementById('navbar');
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-links a');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (window.scrollY >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current) && current !== null) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Mobile Menu
+        const hamburger = document.getElementById('hamburger');
+        const navLinksContainer = document.getElementById('nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinksContainer.classList.toggle('nav-open');
+            hamburger.classList.toggle('nav-open-hamburger');
+        });
+
+        navLinksContainer.addEventListener('click', (e) => {
+            if(e.target.tagName === 'A') {
+                navLinksContainer.classList.remove('nav-open');
+                hamburger.classList.remove('nav-open-hamburger');
+            }
+        });
+
+        // Scroll Reveal
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(element => {
+            observer.observe(element);
+        });
+    </script>
+</body>
+</html>
